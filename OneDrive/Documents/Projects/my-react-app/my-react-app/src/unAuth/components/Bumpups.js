@@ -4,6 +4,12 @@ import { faCircleRight } from '@fortawesome/free-solid-svg-icons';
 import './Bumpups.css';
 
 function Bumpups() {
+  const handleCardClick = (url) => {
+    if (url) {
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   return (
     <div className="bumpups">
       <div className="bumpups-header">
@@ -11,7 +17,7 @@ function Bumpups() {
         <p>Really just testing things right now tbh</p>
       </div>
       <div className="bumpups-container">
-        <div className="bumpup-card">
+        <div className="bumpup-card" onClick={() => handleCardClick('#')}>
           <div className="bumpup-icon">
             <img src="https://img.icons8.com/fluency/96/000000/video.png" alt="Local Videos" />
           </div>
@@ -22,7 +28,7 @@ function Bumpups() {
           </div>
         </div>
 
-        <div className="bumpup-card">
+        <div className="bumpup-card" onClick={() => handleCardClick('https://docs.bumpups.com/docs/getting-started')}>
           <div className="bumpup-icon">
             <img src="https://img.icons8.com/fluency/96/000000/video-call.png" alt="Video Chat" />
           </div>
@@ -33,7 +39,7 @@ function Bumpups() {
           </div>
         </div>
 
-        <div className="bumpup-card">
+        <div className="bumpup-card" onClick={() => handleCardClick('https://www.youtube.com/watch?v=9js9TtWxRlo&list=PLJrzt4ameiaMxmOwTlxOy3eW37oZgAMIw&index=5')}>
           <div className="bumpup-icon">
             <img src="https://img.icons8.com/fluency/96/000000/youtube.png" alt="AI Youtube" />
           </div>

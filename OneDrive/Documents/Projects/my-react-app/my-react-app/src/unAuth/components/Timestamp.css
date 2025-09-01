@@ -37,6 +37,7 @@
     flex-direction: column;
     gap: 1.2rem;
     align-items: center;
+    margin-bottom: 2rem;
   }
   
   .input-group {
@@ -95,7 +96,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
-  .generate-btn:hover {
+  .generate-btn:hover:not(:disabled) {
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     background: linear-gradient(135deg, #9333ea 0%, #6d28d9 100%);
@@ -103,6 +104,91 @@
   
   .generate-btn:active {
     transform: translateY(0);
+  }
+  
+  .generate-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  .generate-btn.loading {
+    background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+  }
+  
+  /* Video Information Styles */
+  .video-info {
+    background: #2d2d2d;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid #444;
+    animation: fadeInUp 0.5s ease-out;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .video-thumbnail {
+    position: relative;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .thumbnail-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+  }
+  
+  .video-duration {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  
+  .video-details {
+    text-align: left;
+  }
+  
+  .video-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    line-height: 1.4;
+  }
+  
+  .video-channel {
+    font-size: 1rem;
+    color: #a855f7;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .video-resolution {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 0;
+    font-weight: 400;
   }
   
   @media (max-width: 768px) {
@@ -125,5 +211,22 @@
     .generate-btn {
       padding: 0.9rem 2rem;
       font-size: 1rem;
+    }
+    
+    .video-info {
+      padding: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .video-title {
+      font-size: 1.1rem;
+    }
+    
+    .video-channel {
+      font-size: 0.9rem;
+    }
+    
+    .video-resolution {
+      font-size: 0.8rem;
     }
   }
