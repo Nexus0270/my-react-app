@@ -1,0 +1,153 @@
+.bumpups {
+    padding: 4rem 0;
+    background-color: #1c1c1c; /* dark background */
+  }
+  
+  /* New header styles */
+  .bumpups-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 0 2rem;
+  }
+  
+  .bumpups-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+  
+  /* Purple text for "ups" */
+  .purple-text {
+    color: #a855f7;
+  }
+  
+  .bumpups-header p {
+    font-size: 1.2rem;
+    color: #b0b0b0;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  .bumpups-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .bumpup-card {
+    background: #222; /* subtle card background */
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .bumpup-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  }
+  
+  .bumpup-icon img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .bumpup-card:hover .bumpup-icon img {
+    transform: rotate(5deg) scale(1.1); /* playful hover */
+  }
+  
+  /* Changed h3 color to purple */
+  .bumpup-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #a855f7; /* purple color */
+    transition: color 0.3s ease;
+  }
+  
+  .bumpup-card p {
+    margin: 0;
+    color: #b0b0b0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+  }
+  
+  /* Changed hover color to a lighter purple */
+  .bumpup-card:hover h3 {
+    color: #c084fc; /* lighter purple accent on hover */
+  }
+  
+  .bumpup-card:hover p {
+    color: #ddd;
+  }
+
+  /* Arrow Icon Styles */
+  .arrow-icon {
+    margin-top: 1rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-block;
+  }
+
+  .arrow-icon svg {
+    font-size: 1.5rem;
+    color: #666;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .bumpup-card:hover .arrow-icon {
+    transform: translateX(8px) scale(1.2);
+  }
+
+  .bumpup-card:hover .arrow-icon svg {
+    color: #a855f7; /* changed to purple to match theme */
+    transform: rotate(15deg);
+  }
+
+  /* Updated pulse animation to purple */
+  .bumpup-card:hover .arrow-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(168, 85, 247, 0.3); /* purple with opacity */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 1s ease-out;
+  }
+
+  @keyframes pulse {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+    100% {
+      width: 60px;
+      height: 60px;
+      opacity: 0;
+    }
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .bumpups-header h2 {
+      font-size: 2rem;
+    }
+    
+    .bumpups-header p {
+      font-size: 1rem;
+    }
+  }
